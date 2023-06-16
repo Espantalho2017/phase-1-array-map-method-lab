@@ -11,6 +11,24 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+// https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/
+// code from above that does this lab with map() method
+// const mySentence = "freeCodeCamp is an awesome resource";
+// const words = mySentence.split(" ");
+// words.map((word) => { 
+//     return word[0].toUpperCase() + word.substring(1); 
+//   }).join(" ");
+// 
+
+function titleCased() {
+  return tutorials.map((title) => {
+      
+      const words = title.split(" ");
+      return words.map((word) => { 
+      return word[0].toUpperCase() + word.substring(1); 
+      }).join(" ");
+    }) ;
+  };
+
+console.log(titleCased());
+
